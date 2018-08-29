@@ -1,0 +1,179 @@
+%% Style file for Frontiers in Networked Control
+%%
+%% Shamelessly copied from:
+%%   http://www.stanford.edu/class/msande339/
+%% Michael Rotkowitz, 12 March 2006
+%%
+%% from where it was shamelessly copied from:
+%%   http://theory.lcs.mit.edu/classes/6.895/fall03/scribe/
+%% Ciamac Moallemi, 31 March 2004
+%%
+%% header modified
+%% Michael Rotkowitz, 12 March 2006
+%%
+
+\def\fileversion{1.0}
+\def\filedate{2006/3/12}
+\NeedsTeXFormat{LaTeX2e}
+%\ProvidesPackage{finc}[\filedate{} macros for the MS&E 339 class at Stanford]
+
+\usepackage{latexsym}
+\usepackage{bbm}
+\usepackage[small,bf]{caption2}
+\usepackage{graphics}
+\usepackage{amsmath, amssymb}
+\usepackage{epsfig}
+
+%% Page size
+
+\setlength{\oddsidemargin}{0pt}
+\setlength{\evensidemargin}{0pt}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{0in}
+\setlength{\textheight}{8.5in}
+
+%% Misc
+
+% Some hacks to make HTML happier.
+\newcommand{\vskipargs}[1]{\vskip #1}
+\newcommand{\newproc}{\hrule\vskipargs{1ex plus 0.1ex minus 0.1ex}}
+
+% Tilde for webstuff
+\newcommand{\webtilde}{\raisebox{-.8ex}\~}
+
+% Comment out chunks.
+\newcommand{\punt}[1]{}
+\newcommand{\remove}[1]{}
+
+% Footnote commands.
+\newcommand{\footnotenonumber}[1]{{\def\thempfn{}\footnotetext{#1}}}
+\newcommand{\footnotetight}[1]{\footnote{\renewcommand\baselinestretch{1}\footnotesize #1}}
+
+% Commands for handout headers
+\newcommand{\handout}[5]{
+%   \renewcommand{\thepage}{#1-\arabic{page}}
+   \noindent
+   \begin{center}
+%   \framebox{ \vbox{ \hbox to 5.78in { {\bf MS\&E339/EE337B Approximate
+%           Dynamic Programming} \hfill #5 }
+   \framebox{ \vbox{ \hbox to 5.78in {{\bf Frontiers in Networked Control} \hfill Lecture #1}
+       \vspace{1mm}
+       \hbox to 5.78in {{\bf Royal Institute of Technology (KTH)} \hfill #5}
+       \vspace{4mm}
+       \hbox to 5.78in {{\Large \hfill #2  \hfill}}
+       \vspace{4mm}
+%       \hbox to 5.78in { {\it #3 \hfill #4} }
+       \hbox to 5.78in {{#3  \hfill}}
+       \vspace{1mm}
+       \hbox to 5.78in {{Instructor: Michael Rotkowitz \hfill #4}}
+     }
+   }
+   \end{center}
+   \vspace*{4mm}
+   \newcommand{\lecturenum}{#1}
+   \addcontentsline{toc}{chapter}{Lecture #1 -- #2}
+}
+
+\newcommand{\lecturetitle}[5]{\handout{#1}{#2}{Lecturer: #5}{Scribe: #3}{#4}}%{Lecture #1 - #4}}
+%\newcommand{\lecturetitle}[4]{\handout{#1}{#2}{Lecturer: Michael Rotkowitz
+%  }{Scribe: #3}{Lecture #1 - #4}}
+\newcommand{\guestlecturetitle}[5]{\handout{#1}{#2}{Lecturer:
+    #4}{Scribe: #3}{Lecture #1 - #5}}
+
+% Assorted theorem/proof environments
+
+% \newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{observation}[theorem]{Observation}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{assumption}[theorem]{Assumption}
+
+\newcommand{\qedbox}{\vbox{\hrule\hbox{\vrule\squarebox{.667em}\vrule}\hrule}}
+\newcommand{\qed}{\nopagebreak\mbox{}\hfill\qedbox\smallskip}
+\newcommand{\dis}{\mathop{\mbox{\rm d}}\nolimits}
+\newcommand{\per}{\mathop{\mbox{\rm per}}\nolimits}
+\newcommand{\area}{\mathop{\mbox{\rm area}}\nolimits}
+\newcommand{\cw}{\mathop{\rm cw}\nolimits}
+\newcommand{\ccw}{\mathop{\rm ccw}\nolimits}
+\newcommand{\DIST}{\mathop{\mbox{\rm DIST}}\nolimits}
+\newcommand{\OP}{\mathop{\mbox{\it OP}}\nolimits}
+\newcommand{\OPprime}{\mathop{\mbox{\it OP}^{\,\prime}}\nolimits}
+\newcommand{\ihat}{\hat{\imath}}
+\newcommand{\jhat}{\hat{\jmath}}
+\newcommand{\abs}[1]{\mathify{\left| #1 \right|}}
+
+\newenvironment{proof}{\noindent{\bf Proof}\hspace*{1em}}{\qed\bigskip\\}
+\newenvironment{proof-sketch}{\noindent{\bf Sketch of Proof}\hspace*{1em}}{\qed\bigskip\\}
+\newenvironment{proof-idea}{\noindent{\bf Proof Idea}\hspace*{1em}}{\qed\bigskip\\}
+\newenvironment{proof-of-lemma}[1]{\noindent{\bf Proof of Lemma #1}\hspace*{1em}}{\qed\bigskip\\}
+\newenvironment{proof-attempt}{\noindent{\bf Proof Attempt}\hspace*{1em}}{\qed\bigskip\\}
+\newenvironment{proofof}[1]{\noindent{\bf Proof} of #1:\hspace*{1em}}{\qed\bigskip\\}
+\newenvironment{remark}{\noindent{\bf Remark}\hspace*{1em}}{\bigskip}
+
+% Figure/Tables Stuff
+
+\makeatletter
+\def\fnum@figure{{\bf Figure \thefigure}}
+\def\fnum@table{{\bf Table \thetable}}
+\long\def\@mycaption#1[#2]#3{\addcontentsline{\csname
+  ext@#1\endcsname}{#1}{\protect\numberline{\csname 
+  the#1\endcsname}{\ignorespaces #2}}\par
+  \begingroup
+    \@parboxrestore
+    \small
+    \@makecaption{\csname fnum@#1\endcsname}{\ignorespaces #3}\par
+  \endgroup}
+\def\mycaption{\refstepcounter\@captype \@dblarg{\@mycaption\@captype}}
+\makeatother
+
+\newcommand{\figcaption}[1]{\mycaption[]{#1}}
+\newcommand{\tabcaption}[1]{\mycaption[]{#1}}
+\newcommand{\head}[1]{\chapter[Lecture \##1]{}}
+\newcommand{\mathify}[1]{\ifmmode{#1}\else\mbox{$#1$}\fi}
+\renewcommand{\Pr}[1]{\mathify{\mbox{Pr}\left[#1\right]}}
+\newcommand{\Exp}[1]{\mathify{\mbox{Exp}\left[#1\right]}}
+\newcommand{\bigO}O
+\newcommand{\set}[1]{\mathify{\left\{ #1 \right\}}}
+\def\half{\frac{1}{2}}
+
+\def\implies{\Rightarrow}
+\def\sizeof#1{\left| #1\right|}
+\def\setof#1{\left\{ #1\right\}  }
+
+
+%% Math Stuff, Symbols
+
+% Number sets.
+\newcommand{\reals}             {\mathbb{R}}
+\newcommand{\integers}          {\mathbb{Z}}
+\newcommand{\naturals}          {\mathbb{N}}
+\newcommand{\rationals}         {\mathbb{Q}}
+\newcommand{\complex}           {\mathbb{C}}
+
+% Probability stuff
+\renewcommand{\Pr}              {\mathbb{P}}
+\newcommand{\prob}[1]           {\Pr\left\{ #1 \right\}}
+\newcommand{\E}                 {\mathbb{E}}
+\newcommand{\expect}[1]         {\E\left[ #1 \right]}
+
+% Misc. shorthand
+\newcommand{\tends}             {\rightarrow}
+\newcommand{\norm}[1]           {\left\| #1\right\|}
+\newcommand{\card}[1]           {\left| #1\right|}
+
+
+\newenvironment{lecture}[4]{\begin{document}
+    \lecturetitle{#1}{#2}{#3}{#4}}{}
+
+\newcommand{\theend}{\end{document}}
+
+
+
+
+
+

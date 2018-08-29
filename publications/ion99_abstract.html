@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>ION 1999 Abstract</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#000000" text="#FFFFFF" background=../mcrotk_files/home_rhs_files/left_stripe.gif>
+Certain types of satellite failures, such as broadcast ephemeris messages
+that do not correspond to true satellite locations, can be difficult to
+detect by a Local Area Augmentation System (LAAS) ground facility (LGF)
+because satellites are observed from reference antennas that are very
+close together. Although ephemeris failures large enough to threaten LAAS
+user integrity should be very rare, a combination of monitors in the LGF
+is needed. This paper analyzes the combined effectiveness of several
+monitoring techniques and proposes solutions for all phases of LAAS
+operations. 
+<BR><BR>
+The first solution is the combination of the GPS Operational
+Control Segment (OCS) and monitors included in the existing Category I LGF
+prototypes. Built-in LGF checks confirm that broadcast range and
+range-rate corrections have reasonable values and also compare computed
+satellite positions based on the current and previous ephemeris messages
+as well as the current almanac message. OCS monitoring by itself is
+insufficient for LAAS because OCS alerts are not guaranteed to meet the
+minimum time-to-alert requirement of 6 seconds for precision
+approaches. However, the combination of OCS and existing LGF monitoring is
+sufficient to meet the allocated per-approach probability of an undetected
+ephemeris error for Category I operations. 
+<BR><BR>
+For Category II and III
+operations, the integrity requirement is 200 times tighter than for
+Category I; thus the monitors described above may be insufficient. This
+paper introduces new algorithms for validating ephemerides in three
+dimensions that can provide the needed improvement. The Differential
+Pseudorange Residual method (DPR) is used to detect ephemeris errors
+parallel to the LGF   satellite line of sight, and the Double Phase
+Difference with Ambiguity Search method (DPDAS) is used to detect
+ephemeris errors perpendicular to the line of sight (and thus very
+difficult to observe). Unlike RAIM, these two methods need only
+one other already-approved GPS satellite in view. These two methods can
+detect all ephemeris failures in three
+dimensions. This paper develops these algorithms in detail and presents
+experimental results from the Stanford LAAS Integrity Monitor Testbed
+(IMT).
+</body>
+</html>
