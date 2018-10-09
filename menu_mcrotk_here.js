@@ -9,7 +9,8 @@ document.write('\
 \
 <!-- publications -->\
 <div class="menuitem">\
-<A href="./index.html#publications" target=_top>Publications</A>\
+<!--"./index.html#publications"-->\
+<A href="./publications.html" target=_top>Publications</A>\
 </div class="menuitem">\
 \
 <!-- awards -->\

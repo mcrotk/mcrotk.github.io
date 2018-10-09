@@ -11,6 +11,10 @@ a:link {
   color: #cc3333; /*redish*/
   text-decoration: none;
 }
+a:visited {
+  color: #41A317; /* lime green *//* #00FF00;  pastel green */
+  text-decoration: none;
+}
 a:hover {
   color: #869eb5; /*bluish*/
   text-decoration: none;
@@ -19,21 +23,39 @@ a:active {
   color: #869eb5; /*bluish*/
   text-decoration: none;
 }
-a:visited {
-  color: #41A317; /* lime green *//* #00FF00;  pastel green */
-  text-decoration: none;
-}
 
 div.author {
   font-family: helvetica,sans-serif;
   font-size: 10pt;
 }
 
+/* Lyft Brand Guidelines, palette */
+/* https://drive.google.com/file/d/19mVO3lRs2ZF1X60ItbZWyRWGHcjAWli6/view */
+.lyft {
+}
+
+a.lyft:link {
+    color: #ff00bf /* lyft-pink */
+}
+a.lyft:visited {
+    color: #8f91ff; /* lyft-violet-2 */
+    text-decoration: none;
+}
+a.lyft:hover {
+    color: #8d3a7f; /* lyft-purple */
+    text-decoration: none;
+    }
+a.lyft:active {
+  color: #869eb5; /*bluish*/
+  text-decoration: none;
+  }
+
 .pubentry {
-  width: 550pt;
+  width: 600; /*550pt;*/
   font-family: helvetica,sans-serif;
   font-size: 10pt;
   font-weight: bold;
+  text-align: justify;
   color: #cccc99; /*yellowish*/
 }
 
@@ -56,16 +78,16 @@ a.article:link {
   color: #cc3333; /*redish*/
   text-decoration: none;
 }
+a.article:visited {
+  color: #41A317; /* lime green */
+  text-decoration: none;
+}
 a.article:hover {
   color: #869eb5; /*bluish*/
   text-decoration: none;
 }
 a.article:active {
   color: #869eb5; /*bluish*/
-  text-decoration: none;
-}
-a.article:visited {
-  color: #41A317; /* lime green */
   text-decoration: none;
 }
 
