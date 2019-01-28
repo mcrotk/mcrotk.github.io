@@ -124,6 +124,12 @@ p.pnotes {
   color: #cccc99; /*yellowish*/
 }
 
+ul.pnotes {
+  width: 560; /*hack for mlabs page*/
+  text-align: justify;
+  color: #cccc99; /*yellowish*/
+}
+
 /* menu */
 td.menu {
   border-right: 1px solid;
