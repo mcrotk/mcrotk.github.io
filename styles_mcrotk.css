@@ -125,7 +125,7 @@ p.pnotes {
 }
 
 ul.pnotes {
-  width: 560; /*hack for mlabs page*/
+  width: 558; /*hack for mlabs page*/
   text-align: justify;
   color: #cccc99; /*yellowish*/
 }
