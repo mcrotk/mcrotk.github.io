@@ -30,7 +30,7 @@ document.write('\
 \
 <!-- prospectives -->\
 <div class="menuitem">\
-  <A href="./prospectives.html" target=_top>Joining UMD / Working with me</A>\
+  <A href="./prospectives.html" target=_top>Working with me</A>\
 </div class="menuitem">\
 \
 <!-- photos ---\
