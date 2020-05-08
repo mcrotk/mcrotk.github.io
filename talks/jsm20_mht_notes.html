@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>JSM'20 Multiple Hypothesis Testing Notes</title>
+<link rel="stylesheet" type="text/css" href="../styles_mcrotk.css" />
+</head>
+
+<body>
+<script src=../menu_mcrotk_up.js></script>
+<td class="notecell">
+
+<blockquote>
+<br><div class="pubentry">
+<div class="author">M.C. Rotkowitz</div class="author">
+  <div class="article">
+    <a class="article" href="./talks/jsm20_mht_notes.html">
+  Resampling Methods for FDR Control of A/B/n Tests with Arbitrary Dependencies
+  </a class="article"></div class="article">
+Joint Statistical Meetings (JSM),
+  August 2020.
+<div class="plinks">
+  <a href="./talks/jsm20_mht_notes.html">
+  [abstract]</a>
+</div class="plinks">
+</div class="pubentry">
+</blockquote>
+
+<h3 class="abstract">
+Abstract
+</h3 class="abstract">
+<blockquote>
+<p class="abstract">
+Large-scale A/B/n testing often yields a Multiple Hypothesis Testing (MHT) problem with significant
+dependencies. The dependencies typically cause the best-known methods to be overly conservative,
+which often results in the multiple testing issues being ignored or being dealt with in ad-hoc
+ways. The challenges of developing methods for MHT to be used across many different types of groups
+in a company include being able to handle these arbitrary dependencies in a manner that doesn't
+require knob-tuning and doesn't introduce excess conservatism, as well as maintaining rejection
+regions which are easily understood (e.g., p-value thresholds). We discuss methods developed at Lyft
+to control the False Discovery Rate (FDR) in such a manner. For the case where different subjects
+can be considered independent (such as user-split tests) we introduce a bootstrap method to estimate
+the false discoveries. For the case where no such assumption can be made (such as time-split tests),
+we introduce a permutation method to estimate the false discoveries. The accuracy and robustness of
+the methods are demonstrated on synthetic data, and if possible, demonstrated on actual rideshare
+data.
+</p class="abstract">
+</blockquote>
+
+</td class="notecell">
+</tr>
+</table>
+</body>
+</html>
+
