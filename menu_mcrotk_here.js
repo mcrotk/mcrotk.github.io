@@ -7,6 +7,12 @@ document.write('\
 <A href="./index.html" target=_top>Home</A>\
 </div class="menuitem">\
 \
+<!-- positions -->\
+<div class="menuitem">\
+<!--"./index.html#publications"-->\
+<A href="./positions/positions.html" target=_top>Positions and Education</A>\
+</div class="menuitem">\
+\
 <!-- publications -->\
 <div class="menuitem">\
 <!--"./index.html#publications"-->\

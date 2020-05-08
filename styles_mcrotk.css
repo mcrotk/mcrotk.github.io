@@ -29,8 +29,6 @@ div.author {
   font-size: 10pt;
 }
 
-/* Lyft Brand Guidelines, palette */
-/* https://drive.google.com/file/d/19mVO3lRs2ZF1X60ItbZWyRWGHcjAWli6/view */
 .lyft {
 }
 
@@ -64,6 +62,14 @@ a.lyft:active {
   font-size: 10pt;
   font-weight: bold;
   color: #cccc99; /*yellowish*/
+}
+
+div.lyft {
+  color: #ff00bf; /*lyft-pink*/
+  /*font-style:STRONG;*/
+  font-weight: bold;
+  font-family: helvetica, sans-serif;
+  font-size: 12pt;
 }
 
 div.article {
