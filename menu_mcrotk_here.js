@@ -21,7 +21,7 @@ document.write('\
 \
 <!-- awards -->\
 <div class="menuitem">\
-<A href="./awards.html" target=_top>Honours and Awards</A>\
+<A href="./awards.html" target=_top>Honors and Awards</A>\
 </div class="menuitem">\
 \
 <!-- talks -->\
