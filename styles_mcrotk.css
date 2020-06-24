@@ -7,6 +7,7 @@
 #cccc99; yellowish
 #ffffff; white
 #a0a0a0; grey
+#aaa9ad; name grey
 #000000; black
 */
 
@@ -31,8 +32,31 @@ body {
     margin-top: 15pt;
     color: #ffffff; /* white */
     height: 100%;
+    /*border-color: #aaa9ad;
+    border-style: solid;
+    border-width: 0pt 50pt 0pt 50pt;*/
 }
 
+
+/* menu */
+td.menu {
+    border-right: 1px solid;
+    background-color: #141414; /*dark grey*/
+    height: 100%;
+    width: 135;
+    padding-top: 100pt;
+}
+
+div.menuitem {
+    padding-top: 0pt;
+    padding-bottom: 20pt;
+    color: var(--emph-color);
+    font-family: arial,helvetica,sans-serif;
+    font-weight: bold;
+    font-size: 10pt;
+}
+
+/* links */
 a:link {
     color: var(--main-link-color); 
     text-decoration: var(--link-decoration);
@@ -223,24 +247,5 @@ ul.pnotes {
     width: var(--list-item-width); /*558; /*hack for mlabs page*/
     text-align: justify;
     color: var(--primary-text-color);
-}
-
-
-/* menu */
-td.menu {
-    border-right: 1px solid;
-    background-color: #141414; /*dark grey*/
-    height: 100%;
-    width: 135;
-    padding-top: 100pt;
-}
-
-div.menuitem {
-    padding-top: 0pt;
-    padding-bottom: 20pt;
-    color: var(--emph-color);
-    font-family: arial,helvetica,sans-serif;
-    font-weight: bold;
-    font-size: 10pt;
 }
 
