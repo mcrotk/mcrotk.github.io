@@ -181,7 +181,7 @@ a.article:active {
 
 div.plinks {
     color: var(--emph-color);
-    font-family: arial,helvetica,sans-serif; /*,helvetica,sans-serif;*/
+    font-family: arial,helvetica,sans-serif;
     font-weight: normal;
     font-size: 10pt;
 }
