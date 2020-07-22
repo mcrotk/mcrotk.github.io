@@ -111,8 +111,12 @@ div.author {
     font-weight: bold;
     text-align: justify;
     color: var(--primary-text-color);
-    margin-top: 15pt;
-    margin-bottom: 15pt
+    /* margin-top: 15pt;
+    margin-bottom: 15pt; */
+    padding-top: 15pt;
+    padding-bottom: 15pt;
+    border-style: solid none none none;
+    border-width: thin;
 }
 
 .job {
