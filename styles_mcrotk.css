@@ -149,6 +149,23 @@ div.author {
     font-size: 10pt;
     font-weight: bold;
     color: var(--primary-text-color);
+    padding-top: 15pt;
+    padding-bottom: 15pt;
+    border-style: solid none none none;
+    border-width: thin;
+}
+
+.honentrylast {
+    width: 650;
+    font-family: helvetica,sans-serif;
+    font-size: 10pt;
+    font-weight: bold;
+    color: var(--primary-text-color);
+    padding-top: 15pt;
+    padding-bottom: 15pt;
+    margin-bottom: 40pt;
+    border-style: solid none solid none;
+    border-width: thin;
 }
 
 div.lyft {
