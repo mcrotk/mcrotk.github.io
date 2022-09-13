@@ -23,6 +23,7 @@
     --secondary-text-color: #7f7f7f;
     --main-width: 650;
     --list-item-width: 610; /* main-width - 40 */
+    --contact-width: 420;
 }
 
 body {
@@ -124,6 +125,19 @@ div.author {
     font-family: helvetica,sans-serif;
     font-size: 10pt;
     font-weight: bold;
+    text-align: justify;
+    color: var(--primary-text-color);
+    padding-top: 15pt;
+    padding-bottom: 15pt;
+    border-style: solid none none none;
+    border-width: thin;
+}
+
+.contact {
+    width: var(--contact-width);
+    font-family: helvetica,sans-serif;
+    font-size: 10pt;
+    font-weight: medium;
     text-align: justify;
     color: var(--primary-text-color);
     padding-top: 15pt;
