@@ -2,7 +2,18 @@
 
 <head>
   <title>Michael Rotkowitz - Selected Talks</title>
-  <base href="https://mcrotk.github.io/">
+  <script>
+    (function() {
+        var baseUrl;
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            baseUrl = '/Users/mcrotk/udocs/private_html/mcrotk.github.io/';  // Use root-relative URLs for local development
+        } else {
+            baseUrl = 'https://mcrotk.github.io/';  // Use absolute URLs for production
+        }
+        document.write('<base href="' + baseUrl + '">');
+    })();
+  </script>
+  <!--<base href="https://mcrotk.github.io/">-->
   <!--<base href="/Users/mcrotk/udocs/private_html/mcrotk.github.io/">-->
   <link rel="stylesheet" type="text/css" href="/styles_mcrotk.css" />
 </head>
@@ -44,7 +55,7 @@ College Park, Maryland, USA, February 2018.
 <div class="honentry">
   "Information Structures in Optimal Decentralized Control"
   <div class="article">
-  <a class="article" href="./publications/papercode39_notes.html">Tutorial Lecture</a>
+  <a class="article" href="/publications/papercode39_notes.html">Tutorial Lecture</a>
    </div class="article">
    <span class="secondary">51st IEEE Conference on Decision and Control (CDC)</span><br>
    <span class="primary">Maui, USA, December 2012.</span>
