@@ -16,7 +16,7 @@ document.write('\
 <!-- publications -->\
 <div class="menuitem">\
 <!--"/index.html#publications"-->\
-<A href="/publications.html" target=_top>Publications</A>\
+<A href="publications.html" target=_top>Publications</A>\
 </div class="menuitem">\
 \
 <!-- awards -->\
