@@ -14,6 +14,27 @@
         console.log("Production detected");
         baseUrl = 'https://mcrotk.github.io/';
     }
-    document.write('<base href="' + baseUrl + '">');
-    console.log("Base href set to: " + baseUrl);
+        
+    // Function to set base href
+    function setBaseHref(url) {
+        var baseTag = document.querySelector('base');
+        if (baseTag) {
+            baseTag.href = url;
+        } else {
+            baseTag = document.createElement('base');
+            baseTag.href = url;
+            document.head.appendChild(baseTag);
+        }
+        console.log("Base href set to: " + url);
+    }
+
+    // Set base href when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+            setBaseHref(baseUrl);
+        });
+    } else {
+        setBaseHref(baseUrl);
+        console.log("Base href set to: " + baseUrl);
+    }
 })();
