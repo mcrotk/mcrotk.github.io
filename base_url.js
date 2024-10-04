@@ -15,7 +15,7 @@
         basePath = '/';
     } else {
         // production
-        console.log("Production environment detected");
+        console.log("Production environment detected.");
         basePath = 'https://' + productionDomain;
     }
     console.log(`Base path set to: "${basePath}".`);
