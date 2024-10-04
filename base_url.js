@@ -1,46 +1,41 @@
 (function() {
-    var baseUrl;
     const localHosts = ['localhost', '127.0.0.1', '192.168.68.112'];
-    console.log("Script `base_url.js` is executing.");
+    const productionDomain = 'mcrotk.github.io';
+    console.log("Executing `base_url.js` script.")
     
-    // detect environment and set base URL
+    // Detect environment and set base URL
+    let basePath;
     if (window.location.protocol === 'file:') {
         // local file system; using production links
         console.log("Local file system detected.");
-        baseUrl = 'https://mcrotk.github.io/';
+        basePath = 'https://' + productionDomain;
     } else if (localHosts.includes(window.location.hostname)) {
-        // local development server
+        // Local development server
         console.log("Local development server detected.");
-        baseUrl = '/';
+        basePath = '/';
     } else {
         // production
-        console.log("Production environment detected.");
-        baseUrl = 'https://mcrotk.github.io/';
+        console.log("Production environment detected");
+        basePath = 'https://' + productionDomain;
     }
-        
-    // Function to set base href
-    function setBaseHref(url) {
-        var baseTag = document.querySelector('base');
-        if (baseTag) {
-            console.log("Existing <base> tag found. Updating href.");
-            baseTag.href = url;
-        } else {
-            console.log("No existing <base> tag found. Creating a new one.");
-            baseTag = document.createElement('base');
-            baseTag.href = url;
-            document.head.appendChild(baseTag);
-        }
+    console.log(`Base path set to: "${basePath}".`);
+
+    // Function to update absolute links
+    function updateAbsoluteLinks() {
+        const links = document.querySelectorAll('a[href^="/"]');
+        links.forEach(link => {
+            if (!link.getAttribute('data-original-href')) {
+                link.setAttribute('data-original-href', link.getAttribute('href'));
+            }
+            link.href = basePath + link.getAttribute('data-original-href');
+        });
     }
 
-    // set base href when DOM is ready
+    // Run the function when the DOM is ready
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function() {
-            setBaseHref(baseUrl);
-            console.log(`Base href set to: "${baseUrl}" after waiting for DOMContentLoaded event.`);
-        });
+        document.addEventListener('DOMContentLoaded', updateAbsoluteLinks);
     } else {
-        setBaseHref(baseUrl);
-        console.log(`Base href set to: "${baseUrl}" after finding that DOM was done loading.`);
+        updateAbsoluteLinks();
     }
-    
+
 })();
