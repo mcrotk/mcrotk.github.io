@@ -1,39 +1,15 @@
 (function() {
-    const menuWidth = '250px';  // Width of the menu
-    const contentLeftPadding = '20px';  // Space between menu and content
-    const contentTopPadding = '20px';  // Space above the content
-    const menuTopPadding = '0px';  // Space above the menu
-
     function createMenuAndWrapContent() {
-        // Create menu content
         const menuHtml = `
-            <table border="0" cellpadding="30" cellspacing="0" height="100%">
-                <tr valign="top">
-                    <td class="menu">
-                        <div class="menuitem">
-                            <a href="/index.html" target="_top">Home</a>
-                        </div>
-                        <div class="menuitem">
-                            <a href="/positions/positions.html" target="_top">Positions and Education</a>
-                        </div>
-                        <div class="menuitem">
-                            <a href="/publications.html" target="_top">Publications</a>
-                        </div>
-                        <div class="menuitem">
-                            <a href="/awards.html" target="_top">Honors and Awards</a>
-                        </div>
-                        <div class="menuitem">
-                            <a href="/talks.html" target="_top">Talks</a>
-                        </div>
-                        <div class="menuitem">
-                            <a href="/courses/courses_main.html" target="_top">Teaching</a>
-                        </div>
-                        <div class="menuitem">
-                            <a href="/prospectives.html" target="_top">Working with me</a>
-                        </div>
-                    </td>
-                </tr>
-            </table>
+            <nav class="menu">
+                <a href="/index.html">Home</a>
+                <a href="/positions/positions.html">Positions and Education</a>
+                <a href="/publications.html">Publications</a>
+                <a href="/awards.html">Honors and Awards</a>
+                <a href="/talks.html">Talks</a>
+                <a href="/courses/courses_main.html">Teaching</a>
+                <a href="/prospectives.html">Working with me</a>
+            </nav>
         `;
 
         // Prepare DOM elements
@@ -53,14 +29,13 @@
         contentWrapper.appendChild(menuElement);
         contentWrapper.appendChild(existingContentContainer);
 
-        // Apply styles and add to DOM
-        requestAnimationFrame(() => {
-            contentWrapper.style.cssText = 'display: flex; width: 100%;';
-            menuElement.style.cssText = `flex: 0 0 ${menuWidth}; padding-top: ${menuTopPadding};`;
-            existingContentContainer.style.cssText = `flex: 1; padding-left: ${contentLeftPadding}; padding-top: ${contentTopPadding};`;
+        // Add classes
+        contentWrapper.className = 'content-wrapper';
+        menuElement.className = 'menu-container';
+        existingContentContainer.className = 'content-container';
 
-            document.body.appendChild(contentWrapper);
-        });
+        // Add to DOM
+        document.body.appendChild(contentWrapper);
     }
 
     // Run the function when the DOM is ready

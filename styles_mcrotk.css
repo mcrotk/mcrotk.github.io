@@ -40,21 +40,97 @@ body {
 
 
 /* menu */
-td.menu {
-    border-right: 1px solid;
-    background-color: #141414; /*dark grey*/
-    height: 100%;
-    width: 135;
-    padding-top: 100pt;
+/* Menu and Layout Styles */
+.content-wrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
 }
 
-div.menuitem {
-    padding-top: 0pt;
-    padding-bottom: 20pt;
+.menu-container {
+    flex: 0 0 200px;
+    max-width: 200px; /* Should match the flex-basis above */
+    padding-top: 0px;
+    padding-right: 0; /* Add this line to remove right padding */
+    background-color: #141414; /* dark grey */
+    border-right: 1px solid;
+    height: 100vh; /* full viewport height */
+}
+
+.content-container {
+    flex: 1;
+    padding-left: 20px;
+    padding-top: 0px;
+}
+
+.menu {
+    position: sticky;
+    top: 0;
+    padding: 100px 10px 20px 20px; /* top, right, bottom, left */
+}
+
+.menu a {
+    display: block;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    padding-bottom: 10px;
     color: var(--emph-color);
     font-family: arial,helvetica,sans-serif;
     font-weight: bold;
     font-size: 10pt;
+    text-decoration: none;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) { /* breakpoint */
+    .content-wrapper {
+        flex-direction: column;
+    }
+    
+    .menu-container {
+        flex-basis: auto;
+        max-width: 100%;
+        width: auto;
+        height: auto;
+        border-right: none; /* Remove right border on mobile */
+        border-bottom: 1px solid; /* Add a bottom border for separation */
+    }
+    
+    .content-container {
+        padding-left: 0;
+    }
+    
+    .menu {
+        position: static;
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Center the menu items */
+        align-items: center;
+    }
+
+    .menu a {
+        margin: 5px 15px; /* Increased horizontal margin */
+        padding-bottom: 0; /* Remove padding-bottom on mobile */
+        white-space: nowrap; /* Prevents wrapping within link text */
+        position: relative; /* For positioning the separator */
+    }
+
+    /* Add separators between menu items */
+    .menu a:not(:last-child)::after {
+        content: "|";
+        position: absolute;
+        right: -15px; /* Adjust based on the margin */
+        color: var(--emph-color);
+    }
+
+    /* Add separators at the beginning and end of the menu */
+    .menu::before,
+    .menu::after {
+        content: "|";
+        color: var(--emph-color);
+        margin: 0 0px;
+    }
 }
 
 /* links */
