@@ -82,7 +82,7 @@ body {
 }
 
 /* Mobile Styles */
-@media (max-width: 768px) { /* breakpoint */
+@media (max-width: 768px) { /* breakpoint for top menu */
     .content-wrapper {
         flex-direction: column;
     }
@@ -101,35 +101,49 @@ body {
     }
     
     .menu {
-        position: static;
-        padding: 10px;
+        position: static; /* Reset any sticky positioning from desktop view */
         display: flex;
         flex-wrap: wrap;
-        justify-content: center; /* Center the menu items */
-        align-items: center;
+        justify-content: flex-start; /* Aligns items to the left */
+        align-items: center; /* Vertically centers items */
+        padding: 10px 20px; /* Increased horizontal padding for edge separators */
     }
 
     .menu a {
-        margin: 5px 15px; /* Increased horizontal margin */
-        padding-bottom: 0; /* Remove padding-bottom on mobile */
+        margin: 5px 10px; /* Horizontal margin */ 
+        padding: 0 10px; /* Padding for the separators */
         white-space: nowrap; /* Prevents wrapping within link text */
         position: relative; /* For positioning the separator */
     }
 
     /* Add separators between menu items */
-    .menu a:not(:last-child)::after {
+    .menu a:not(:first-child)::before {
         content: "|";
         position: absolute;
-        right: -15px; /* Adjust based on the margin */
+        left: -10px; /* Adjust based on the margin */
+        top: 50%;
+        transform: translateY(-50%);
         color: var(--emph-color);
     }
 
-    /* Add separators at the beginning and end of the menu */
-    .menu::before,
-    .menu::after {
+    /* Add separator at the beginning of the menu */
+    .menu a:first-child::before {
         content: "|";
+        position: absolute;
+        left: -10px; /* Align with the edge of the menu */
+        top: 50%;
+        transform: translateY(-50%);
         color: var(--emph-color);
-        margin: 0 0px;
+    }
+
+    /* Add separator at the end of the menu */
+    .menu a:last-child::after {
+        content: "|";
+        position: absolute;
+        right: -10px; /* Align with the edge of the menu */
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--emph-color);
     }
 }
 
