@@ -51,7 +51,7 @@ body {
     flex: 0 0 200px;
     max-width: 200px; /* Should match the flex-basis above */
     padding-top: 0px;
-    padding-right: 0; /* Add this line to remove right padding */
+    padding-right: 5px;
     background-color: #141414; /* dark grey */
     border-right: 1px solid;
     height: 100vh; /* full viewport height */
@@ -59,8 +59,9 @@ body {
 
 .content-container {
     flex: 1;
-    padding-left: 20px;
-    padding-top: 0px;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-right: 5px;
 }
 
 .menu {
