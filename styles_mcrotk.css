@@ -109,7 +109,7 @@ body {
         align-items: center; /* Vertically centers items */
         padding: var(--menu-link-spacing) calc(2*var(--menu-link-spacing));
         --menu-separator-color: var(--emph-color);
-        --menu-link-spacing: 10px;
+        --menu-link-spacing: 5px;
     }
 
     .menu a {
