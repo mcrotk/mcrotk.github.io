@@ -39,7 +39,7 @@ body {
 }
 
 
-/* menu */
+/*** menu ***/
 /* Menu and Layout Styles */
 .content-wrapper {
     display: flex;
@@ -127,28 +127,26 @@ body {
         color: var(--emph-color);
     }
 
-    /* Add separator at the beginning of the menu */
-    .menu a:first-child::before {
-        content: "|";
-        position: absolute;
-        left: -10px; /* Align with the edge of the menu */
-        top: 50%;
-        transform: translateY(-50%);
-        color: var(--emph-color);
-    }
-
-    /* Add separator at the end of the menu */
+    /* Add outer separators */
+    .menu a:first-child::before,
     .menu a:last-child::after {
         content: "|";
         position: absolute;
-        right: -10px; /* Align with the edge of the menu */
         top: 50%;
         transform: translateY(-50%);
         color: var(--emph-color);
     }
+    
+    .menu a:first-child::before {
+        left: -10px; /* Align with the edge of the menu */
+    }
+
+    .menu a:last-child::after {
+        right: -10px; /* Align with the edge of the menu */
+    }
 }
 
-/* links */
+/*** links ***/
 a:link {
     color: var(--main-link-color); 
     text-decoration: var(--link-decoration);
@@ -181,6 +179,103 @@ a.lyft:hover {
 a.lyft:active {
     color: #869eb5; /* bluish */
     text-decoration: var(--link-hover-decoration);
+}
+
+/*** link series ***/
+/* Base styles for link series */
+.link-series {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative; /* For positioning outer separators */
+    width: fit-content; /* Adjust width to content */
+    margin: 0.5em 0; /* Adds some vertical spacing */
+    --separator-color: var(--primary-text-color); /*emph-color*/
+    --link-spacing: 10px;
+}
+
+.link-series a {
+    margin: 0 var(--link-spacing); /* Add margin for spacing */
+    position: relative; /* For positioning separators */
+}
+
+/* Separator style (default) */
+.link-series::before,
+.link-series::after,
+.link-series.separator-style::before,
+.link-series.separator-style::after {
+    content: '|';
+    color: var(--separator-color);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.link-series::before,
+.link-series.separator-style::before {
+    left: 0;
+}
+
+.link-series::after,
+.link-series.separator-style::after {
+    right: 0;
+}
+
+.link-series a:not(:last-child)::after,
+.link-series.separator-style a:not(:last-child)::after {
+    content: '|';
+    color: var(--separator-color);
+    position: absolute;
+    left: 100%; /* Position separator after the link */
+    margin-left: var(--link-spacing); /* Space between link and separator */
+}
+
+/* Adjust spacing for first and last links */
+.link-series a:first-child {
+    margin-left: var(--link-spacing);
+}
+
+.link-series a:last-child {
+    margin-right: var(--link-spacing);
+}
+
+/* Bracket style */
+.link-series.bracket-style{
+    --bracket-text-spacing: 1px;
+}
+    
+/* Remove outer separators */
+.link-series.bracket-style::before,
+.link-series.bracket-style::after {
+    content: none;
+}
+
+.link-series.bracket-style a {
+    margin: 0;
+    padding: 0;
+}
+
+.link-series.bracket-style a::before {
+    content: '[';
+    margin-right: var(--bracket-text-spacing);
+}
+
+.link-series.bracket-style a::after {
+    content: ']';
+    margin-left: var(--bracket-text-spacing);
+}
+
+/* Ensure brackets for all links in bracket style */
+.link-series.bracket-style a:not(:last-child)::after {
+    content: ']';
+    color: inherit;
+    position: static;
+    margin-left: var(--bracket-text-spacing);
+}
+
+/* Add space between bracketed items */
+.link-series.bracket-style a:not(:last-child) {
+    margin-right: var(--link-spacing);
 }
 
 div.author {
