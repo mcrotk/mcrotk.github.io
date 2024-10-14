@@ -107,12 +107,14 @@ body {
         flex-wrap: wrap;
         justify-content: flex-start; /* Aligns items to the left */
         align-items: center; /* Vertically centers items */
-        padding: 10px 20px; /* Increased horizontal padding for edge separators */
+        padding: var(--menu-link-spacing) calc(2*var(--menu-link-spacing));
+        --menu-separator-color: var(--emph-color);
+        --menu-link-spacing: 10px;
     }
 
     .menu a {
-        margin: 5px 10px; /* Horizontal margin */ 
-        padding: 0 10px; /* Padding for the separators */
+        margin: calc(var(--menu-link-spacing)/2) var(--menu-link-spacing);
+        padding: 0 var(--menu-link-spacing); /* Padding for the separators */
         white-space: nowrap; /* Prevents wrapping within link text */
         position: relative; /* For positioning the separator */
     }
@@ -121,10 +123,10 @@ body {
     .menu a:not(:first-child)::before {
         content: "|";
         position: absolute;
-        left: -10px; /* Adjust based on the margin */
+        left: calc(-1*var(--menu-link-spacing)); /* Adjust based on the margin */
         top: 50%;
         transform: translateY(-50%);
-        color: var(--emph-color);
+        color: var(--menu-separator-color);
     }
 
     /* Add outer separators */
@@ -134,15 +136,15 @@ body {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        color: var(--emph-color);
+        color: var(--menu-separator-color);
     }
     
     .menu a:first-child::before {
-        left: -10px; /* Align with the edge of the menu */
+        left: calc(-1*var(--menu-link-spacing));
     }
 
     .menu a:last-child::after {
-        right: -10px; /* Align with the edge of the menu */
+        right: calc(-1*var(--menu-link-spacing));
     }
 }
 
