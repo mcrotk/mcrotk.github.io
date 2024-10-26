@@ -472,3 +472,86 @@ ul.pnotes {
     color: var(--primary-text-color);
 }
 
+/*** homepage ***/
+/* Main content layout */
+.main-container {
+    display: grid;
+    grid-template-columns: auto 174px;
+    gap: 2rem;
+}
+
+.content-column {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Name styling */
+.name-header {
+    font-size: 42pt;
+    font-weight: normal;
+    color: #aaa9ad;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+}
+
+/* Title list styling */
+.title-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: helvetica, sans-serif;
+    font-size: 10pt;
+}
+
+.title-list li {
+    display: inline;
+}
+
+.title-list li:not(:last-child)::after {
+    content: " / ";
+    color: var(--primary-text-color);
+}
+
+/* Location text */
+.location {
+    margin-top: 0.5rem;
+    color: var(--primary-text-color);
+    font-family: helvetica, sans-serif;
+    font-size: 10pt;
+}
+
+/* Profile image */
+.profile-image {
+    margin: 0;
+    padding: 0;
+}
+
+.profile-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Section styling */
+.section-content {
+    margin-left: 40px;  /* This replaces the blockquote indentation */
+}
+
+/* Contact section styling */
+.contact-section {
+    margin-top: 2rem;
+}
+
+.contact-section h2 {
+    margin-bottom: 1rem;
+}
+
+/* External links section */
+.external-links-section {
+    margin-top: 2rem;
+}
+
+.external-links-section h2 {
+    margin-bottom: 1rem;
+}
