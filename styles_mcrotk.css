@@ -190,55 +190,50 @@ a.lyft:active {
     flex-wrap: wrap;
     align-items: center;
     position: relative; /* For positioning outer separators */
-    width: fit-content; /* Adjust width to content */
-    margin: 0.5em 0; /* Adds some vertical spacing */
+    justify-content: flex-start;
     --separator-color: var(--primary-text-color); /*emph-color*/
-    --link-spacing: 10px;
+    --link-spacing: 5px;
 }
 
 .link-series a {
-    margin: 0 var(--link-spacing); /* Add margin for spacing */
-    position: relative; /* For positioning separators */
+    margin: calc(var(--link-spacing)/2) var(--link-spacing);
+    padding: 0 var(--link-spacing); /* Padding for the separators */
+    white-space: nowrap; /* Prevents wrapping within link text */
+    position: relative; /* For positioning the separator */
 }
 
 /* Separator style (default) */
-.link-series::before,
-.link-series::after,
-.link-series.separator-style::before,
-.link-series.separator-style::after {
-    content: '|';
+/* Add separators between links */
+.link-series a:not(:first-child)::before,
+.link-series.separator-style a:not(:first-child)::before {
+    content: "|";
+    position: absolute;
+    left: calc(-1*var(--link-spacing));
+    top: 50%;
+    transform: translateY(-50%);
     color: var(--separator-color);
+}
+
+/* Add outer separators */
+.link-series a:first-child::before,
+.link-series a:last-child::after,
+.link-series.separator-style a:first-child::before,
+.link-series.separator-style a:last-child::after {
+    content: "|";
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-}
-
-.link-series::before,
-.link-series.separator-style::before {
-    left: 0;
-}
-
-.link-series::after,
-.link-series.separator-style::after {
-    right: 0;
-}
-
-.link-series a:not(:last-child)::after,
-.link-series.separator-style a:not(:last-child)::after {
-    content: '|';
     color: var(--separator-color);
-    position: absolute;
-    left: 100%; /* Position separator after the link */
-    margin-left: var(--link-spacing); /* Space between link and separator */
 }
 
-/* Adjust spacing for first and last links */
-.link-series a:first-child {
-    margin-left: var(--link-spacing);
+.link-series a:first-child::before,
+.link-series.separator-style a:first-child::before {
+    left: calc(-1*var(--link-spacing));
 }
 
-.link-series a:last-child {
-    margin-right: var(--link-spacing);
+.link-series a:last-child::after,
+.link-series.separator-style a:last-child::after {
+    right: calc(-1*var(--link-spacing));
 }
 
 /* Bracket style */
