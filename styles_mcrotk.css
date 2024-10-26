@@ -475,9 +475,14 @@ ul.pnotes {
 /*** homepage ***/
 /* Main content layout */
 .main-container {
+    width: 100%;
+}
+
+.top-section {
     display: grid;
     grid-template-columns: auto 174px;
     gap: 2rem;
+    margin-bottom: 2rem;
 }
 
 .content-column {
@@ -535,7 +540,7 @@ ul.pnotes {
 
 /* Section styling */
 .section-content {
-    margin-left: 40px;  /* This replaces the blockquote indentation */
+    margin-left: 40px;  /* instead of blockquote indentation */
 }
 
 /* Contact section styling */
@@ -549,6 +554,7 @@ ul.pnotes {
 
 /* External links section */
 .external-links-section {
+    width: 100%;
     margin-top: 2rem;
 }
 
