@@ -38,243 +38,6 @@ body {
     border-width: 0pt 50pt 0pt 50pt;*/
 }
 
-
-/*** menu ***/
-/* Menu and Layout Styles */
-.content-wrapper {
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-}
-
-.menu-container {
-    flex: 0 0 200px;
-    max-width: 200px; /* Should match the flex-basis above */
-    padding-top: 0px;
-    padding-right: 5px;
-    background-color: #141414; /* dark grey */
-    border-right: 1px solid;
-    height: 100vh; /* full viewport height */
-}
-
-.content-container {
-    flex: 1;
-    padding-left: 30px;
-    padding-top: 10px;
-    padding-right: 5px;
-}
-
-.menu {
-    position: sticky;
-    top: 0;
-    padding: 100px 10px 20px 20px; /* top, right, bottom, left */
-}
-
-.menu a {
-    display: block;
-    margin-bottom: 20px;
-    margin-right: 10px;
-    padding-bottom: 10px;
-    color: var(--emph-color);
-    font-family: arial,helvetica,sans-serif;
-    font-weight: bold;
-    font-size: 10pt;
-    text-decoration: none;
-}
-
-/* Mobile Styles */
-@media (max-width: 768px) { /* breakpoint for top menu */
-    .content-wrapper {
-        flex-direction: column;
-    }
-    
-    .menu-container {
-        flex-basis: auto;
-        max-width: 100%;
-        width: auto;
-        height: auto;
-        border-right: none; /* Remove right border on mobile */
-        border-bottom: 1px solid; /* Add a bottom border for separation */
-    }
-    
-    .content-container {
-        padding-left: 0;
-    }
-    
-    .menu {
-        position: static; /* Reset any sticky positioning from desktop view */
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start; /* Aligns items to the left */
-        align-items: center; /* Vertically centers items */
-        padding: var(--menu-link-spacing) calc(2*var(--menu-link-spacing));
-        --menu-separator-color: var(--emph-color);
-        --menu-link-spacing: 5px;
-    }
-
-    .menu a {
-        margin: calc(var(--menu-link-spacing)/2) var(--menu-link-spacing);
-        padding: 0 var(--menu-link-spacing); /* Padding for the separators */
-        white-space: nowrap; /* Prevents wrapping within link text */
-        position: relative; /* For positioning the separator */
-    }
-
-    /* Add separators between menu items */
-    .menu a:not(:first-child)::before {
-        content: "|";
-        position: absolute;
-        left: calc(-1*var(--menu-link-spacing)); /* Adjust based on the margin */
-        top: 50%;
-        transform: translateY(-50%);
-        color: var(--menu-separator-color);
-    }
-
-    /* Add outer separators */
-    .menu a:first-child::before,
-    .menu a:last-child::after {
-        content: "|";
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        color: var(--menu-separator-color);
-    }
-    
-    .menu a:first-child::before {
-        left: calc(-1*var(--menu-link-spacing));
-    }
-
-    .menu a:last-child::after {
-        right: calc(-1*var(--menu-link-spacing));
-    }
-}
-
-/*** links ***/
-a:link {
-    color: var(--main-link-color); 
-    text-decoration: var(--link-decoration);
-}
-a:visited {
-    color: var(--main-link-color);
-    text-decoration: var(--link-decoration);
-}
-a:hover {
-    color: var(--link-hover-color);
-    text-decoration: var(--link-hover-decoration);
-}
-a:active {
-    color: var(--link-active-color);
-    text-decoration: var(--link-hover-decoration);
-}
-
-a.lyft:link {
-    color: #ff00bf; /* lyft-pink */
-    text-decoration: var(--link-decoration);
-}
-a.lyft:visited {
-    color: #8f91ff; /* lyft-violet-2 */
-    text-decoration: var(--link-decoration);
-}
-a.lyft:hover {
-    color: #8d3a7f; /* lyft-purple */
-    text-decoration: var(--link-hover-decoration);
-}
-a.lyft:active {
-    color: #869eb5; /* bluish */
-    text-decoration: var(--link-hover-decoration);
-}
-
-/*** link series ***/
-/* Base styles for link series */
-.link-series {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    position: relative; /* For positioning outer separators */
-    justify-content: flex-start;
-    --separator-color: var(--primary-text-color); /*emph-color*/
-    --link-spacing: 5px;
-}
-
-.link-series a {
-    margin: calc(var(--link-spacing)/2) var(--link-spacing);
-    padding: 0 var(--link-spacing); /* Padding for the separators */
-    white-space: nowrap; /* Prevents wrapping within link text */
-    position: relative; /* For positioning the separator */
-}
-
-/* Separator style (default) */
-/* Add separators between links */
-.link-series a:not(:first-child)::before,
-.link-series.separator-style a:not(:first-child)::before {
-    content: "|";
-    position: absolute;
-    left: calc(-1*var(--link-spacing));
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--separator-color);
-}
-
-/* Add outer separators */
-.link-series a:first-child::before,
-.link-series a:last-child::after,
-.link-series.separator-style a:first-child::before,
-.link-series.separator-style a:last-child::after {
-    content: "|";
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--separator-color);
-}
-
-.link-series a:first-child::before,
-.link-series.separator-style a:first-child::before {
-    left: calc(-1*var(--link-spacing));
-}
-
-.link-series a:last-child::after,
-.link-series.separator-style a:last-child::after {
-    right: calc(-1*var(--link-spacing));
-}
-
-/* Bracket style */
-.link-series.bracket-style{
-    --bracket-text-spacing: 1px;
-}
-    
-/* Remove outer separators */
-.link-series.bracket-style::before,
-.link-series.bracket-style::after {
-    content: none;
-}
-
-.link-series.bracket-style a {
-    margin: 0;
-    padding: 0;
-}
-
-.link-series.bracket-style a::before {
-    content: '[';
-    margin-right: var(--bracket-text-spacing);
-}
-
-.link-series.bracket-style a::after {
-    content: ']';
-    margin-left: var(--bracket-text-spacing);
-}
-
-/* Ensure brackets for all links in bracket style */
-.link-series.bracket-style a:not(:last-child)::after {
-    content: ']';
-    color: inherit;
-    position: static;
-    margin-left: var(--bracket-text-spacing);
-}
-
-/* Add space between bracketed items */
-.link-series.bracket-style a:not(:last-child) {
-    margin-right: var(--link-spacing);
-}
-
 div.author {
     font-family: helvetica,sans-serif;
     font-size: 10pt;
@@ -486,7 +249,239 @@ p.footdate {
     font-size: 7.5pt
 }
 
-/*** homepage ***/
+/*-------------------- menu --------------------*/
+.content-wrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+}
+
+.menu-container {
+    flex: 0 0 200px;
+    max-width: 200px; /* Should match the flex-basis above */
+    padding-top: 0px;
+    padding-right: 5px;
+    background-color: #141414; /* dark grey */
+    border-right: 1px solid;
+    height: 100vh; /* full viewport height */
+}
+
+.content-container {
+    flex: 1;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-right: 5px;
+}
+
+.menu {
+    position: sticky;
+    top: 0;
+    padding: 100px 10px 20px 20px; /* top, right, bottom, left */
+}
+
+.menu a {
+    display: block;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    padding-bottom: 10px;
+    color: var(--emph-color);
+    font-family: arial,helvetica,sans-serif;
+    font-weight: bold;
+    font-size: 10pt;
+    text-decoration: none;
+}
+
+/*-------------------- Mobile Styles --------------------*/
+@media (max-width: 768px) { /* breakpoint for top menu */
+    .content-wrapper {
+        flex-direction: column;
+    }
+    
+    .menu-container {
+        flex-basis: auto;
+        max-width: 100%;
+        width: auto;
+        height: auto;
+        border-right: none; /* Remove right border on mobile */
+        border-bottom: 1px solid; /* Add a bottom border for separation */
+    }
+    
+    .content-container {
+        padding-left: 0;
+    }
+    
+    .menu {
+        position: static; /* Reset any sticky positioning from desktop view */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start; /* Aligns items to the left */
+        align-items: center; /* Vertically centers items */
+        padding: var(--menu-link-spacing) calc(2*var(--menu-link-spacing));
+        --menu-separator-color: var(--emph-color);
+        --menu-link-spacing: 5px;
+    }
+
+    .menu a {
+        margin: calc(var(--menu-link-spacing)/2) var(--menu-link-spacing);
+        padding: 0 var(--menu-link-spacing); /* Padding for the separators */
+        white-space: nowrap; /* Prevents wrapping within link text */
+        position: relative; /* For positioning the separator */
+    }
+
+    /* Add separators between menu items */
+    .menu a:not(:first-child)::before {
+        content: "|";
+        position: absolute;
+        left: calc(-1*var(--menu-link-spacing)); /* Adjust based on the margin */
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--menu-separator-color);
+    }
+
+    /* Add outer separators */
+    .menu a:first-child::before,
+    .menu a:last-child::after {
+        content: "|";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--menu-separator-color);
+    }
+    
+    .menu a:first-child::before {
+        left: calc(-1*var(--menu-link-spacing));
+    }
+
+    .menu a:last-child::after {
+        right: calc(-1*var(--menu-link-spacing));
+    }
+}
+
+/*-------------------- links --------------------*/
+a:link {
+    color: var(--main-link-color); 
+    text-decoration: var(--link-decoration);
+}
+a:visited {
+    color: var(--main-link-color);
+    text-decoration: var(--link-decoration);
+}
+a:hover {
+    color: var(--link-hover-color);
+    text-decoration: var(--link-hover-decoration);
+}
+a:active {
+    color: var(--link-active-color);
+    text-decoration: var(--link-hover-decoration);
+}
+
+a.lyft:link {
+    color: #ff00bf; /* lyft-pink */
+    text-decoration: var(--link-decoration);
+}
+a.lyft:visited {
+    color: #8f91ff; /* lyft-violet-2 */
+    text-decoration: var(--link-decoration);
+}
+a.lyft:hover {
+    color: #8d3a7f; /* lyft-purple */
+    text-decoration: var(--link-hover-decoration);
+}
+a.lyft:active {
+    color: #869eb5; /* bluish */
+    text-decoration: var(--link-hover-decoration);
+}
+
+/*-------------------- link series --------------------*/
+/* Base styles for link series */
+.link-series {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative; /* For positioning outer separators */
+    justify-content: flex-start;
+    --separator-color: var(--primary-text-color); /*emph-color*/
+    --link-spacing: 5px;
+    --bracket-text-spacing: 1px;
+}
+
+.link-series a {
+    margin: calc(var(--link-spacing)/2) var(--link-spacing);
+    padding: 0 var(--link-spacing); /* Padding for the separators */
+    white-space: nowrap; /* Prevents wrapping within link text */
+    position: relative; /* For positioning the separator */
+}
+
+/*---------- Separator style (default) ----------*/
+/* Add separators between links */
+.link-series a:not(:first-child)::before,
+.link-series.separator-style a:not(:first-child)::before {
+    content: "|";
+    position: absolute;
+    left: calc(-1*var(--link-spacing));
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--separator-color);
+}
+
+/* Add outer separators */
+.link-series a:first-child::before,
+.link-series a:last-child::after,
+.link-series.separator-style a:first-child::before,
+.link-series.separator-style a:last-child::after {
+    content: "|";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--separator-color);
+}
+
+.link-series a:first-child::before,
+.link-series.separator-style a:first-child::before {
+    left: calc(-1*var(--link-spacing));
+}
+
+.link-series a:last-child::after,
+.link-series.separator-style a:last-child::after {
+    right: calc(-1*var(--link-spacing));
+}
+
+/*---------- Bracket style ----------*/    
+/* Remove outer separators */
+.link-series.bracket-style::before,
+.link-series.bracket-style::after {
+    content: none;
+}
+
+.link-series.bracket-style a {
+    margin: 0;
+    padding: 0;
+}
+
+.link-series.bracket-style a::before {
+    content: '[';
+    margin-right: var(--bracket-text-spacing);
+}
+
+.link-series.bracket-style a::after {
+    content: ']';
+    margin-left: var(--bracket-text-spacing);
+}
+
+/* Ensure brackets for all links in bracket style */
+.link-series.bracket-style a:not(:last-child)::after {
+    content: ']';
+    color: inherit;
+    position: static;
+    margin-left: var(--bracket-text-spacing);
+}
+
+/* Add space between bracketed items */
+.link-series.bracket-style a:not(:last-child) {
+    margin-right: var(--link-spacing);
+}
+
+/*-------------------- homepage --------------------*/
 /* Main content layout */
 .main-container {
     width: 100%;
@@ -516,15 +511,17 @@ p.footdate {
 
 /* Title list styling */
 .title-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    font-family: helvetica, sans-serif;
-    font-size: 10pt;
+    margin: 0;          /* Remove default margins */
+    padding: 5pt 0 0 0;  /* Add top spacing, remove default indentation padding */
+    list-style: none;   /* Remove bullet points */
 }
 
 .title-list li {
     display: inline;
+    color: var(--emph-color);
+    font-family: helvetica, sans-serif;
+    font-size: 12pt;
+    font-weight: bold;
 }
 
 .title-list li:not(:last-child)::after {
@@ -538,6 +535,7 @@ p.footdate {
     color: var(--primary-text-color);
     font-family: helvetica, sans-serif;
     font-size: 10pt;
+    font-weight: bold;
 }
 
 /* Profile image */
