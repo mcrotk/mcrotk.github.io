@@ -554,18 +554,19 @@ a.lyft:active {
 /* contact list */
 .contact-list {
     width: var(--contact-width);
+    --contact-list-border-type: thin solid;
 }
 
 .contact-list .contact:first-child {
-    border-top: thin solid;
+    border-top: var(--contact-list-border-type);
 }
 
 .contact-list .contact:last-child {
-    border-bottom: thin solid;
+    border-bottom: var(--contact-list-border-type);
 }
 
 .contact-list .contact:not(:first-child) {
-    border-top: thin solid;
+    border-top: var(--contact-list-border-type);
 }
 
 /* External links section */
