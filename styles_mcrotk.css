@@ -21,6 +21,8 @@
     --link-emph-color: #fa0087;
     --primary-text-color: #b2b2b2; /* grey */
     --secondary-text-color: #7f7f7f;
+    --primary-font-stack: arial, helvetica, sans-serif;
+    --heading-font-stack: helvetica, sans-serif;
     --main-width: 650;
     --list-item-width: 610; /* main-width - 40 */
     --contact-width: 420;
@@ -39,7 +41,7 @@ body {
 }
 
 div.author {
-    font-family: helvetica,sans-serif;
+    font-family: var(--heading-font-stack);
     font-size: 10pt;
 }
 
@@ -53,7 +55,7 @@ div.author {
 
 .pubentry {
     width: var(--main-width);
-    font-family: helvetica,sans-serif;
+    font-family: var(--heading-font-stack);
     font-size: 10pt;
     font-weight: bold;
     text-align: justify;
@@ -68,7 +70,7 @@ div.author {
 
 .job {
     width: var(--main-width);
-    font-family: helvetica,sans-serif;
+    font-family: var(--heading-font-stack);
     font-size: 10pt;
     font-weight: bold;
     text-align: justify;
@@ -81,7 +83,7 @@ div.author {
 
 .school {
     width: var(--main-width);
-    font-family: helvetica,sans-serif;
+    font-family: var(--heading-font-stack);
     font-size: 10pt;
     font-weight: bold;
     text-align: justify;
@@ -92,7 +94,7 @@ div.author {
 
 .honentry {
     width: 650;
-    font-family: helvetica,sans-serif;
+    font-family: var(--heading-font-stack);
     font-size: 10pt;
     font-weight: bold;
     color: var(--primary-text-color);
@@ -104,7 +106,7 @@ div.author {
 
 .honentrylast {
     width: 650;
-    font-family: helvetica,sans-serif;
+    font-family: var(--heading-font-stack);
     font-size: 10pt;
     font-weight: bold;
     color: var(--primary-text-color);
@@ -118,14 +120,14 @@ div.author {
 div.lyft {
     color: #ff00bf; /*lyft-pink*/
     font-weight: bold;
-    font-family: helvetica, sans-serif;
+    font-family: var(--heading-font-stack);
     font-size: 12pt;
 }
 
 div.article {
     color: var(--emph-color);
     font-weight: bold;
-    font-family: helvetica, sans-serif;
+    font-family: var(--heading-font-stack);
     font-size: 12pt;
     text-align: left;
 }
@@ -149,7 +151,7 @@ a.article:active {
 
 div.plinks {
     color: var(--emph-color);
-    font-family: arial,helvetica,sans-serif;
+    font-family: var(--primary-font-stack);
     font-weight: normal;
     font-size: 10pt;
 }
@@ -220,7 +222,7 @@ ul.pnotes {
 
 .footer-date {
     text-align: right;
-    font-family: helvetica, sans-serif;
+    font-family: var(--heading-font-stack);
     color: #a0a0a0;
     font-size: 7.5pt;
 }
@@ -231,7 +233,7 @@ hr.footdate {
 
 p.footdate {
     text-align: right;
-    font-family: helvetica, sans-serif;
+    font-family: var(--heading-font-stack);
     color: #a0a0a0;
     font-size: 7.5pt
 }
@@ -272,7 +274,7 @@ p.footdate {
     margin-right: 10px;
     padding-bottom: 10px;
     color: var(--emph-color);
-    font-family: arial,helvetica,sans-serif;
+    font-family: var(--primary-font-stack);
     font-weight: bold;
     font-size: 10pt;
     text-decoration: none;
@@ -506,7 +508,7 @@ a.lyft:active {
 .title-list li {
     display: inline;
     color: var(--emph-color);
-    font-family: helvetica, sans-serif;
+    font-family: var(--heading-font-stack);
     font-size: 12pt;
     font-weight: bold;
 }
@@ -520,7 +522,7 @@ a.lyft:active {
 .location {
     margin-top: 0.5rem;
     color: var(--primary-text-color);
-    font-family: helvetica, sans-serif;
+    font-family: var(--heading-font-stack);
     font-size: 10pt;
     font-weight: bold;
 }
@@ -554,7 +556,7 @@ a.lyft:active {
 
 .contact {
     width: var(--contact-width);
-    font-family: helvetica,sans-serif;
+    font-family: var(--heading-font-stack);
     font-size: 10pt;
     font-weight: medium;
     text-align: justify;
