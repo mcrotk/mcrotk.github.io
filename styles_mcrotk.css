@@ -450,6 +450,31 @@ p.pnotes {
     font-weight: bold;
 }
 
+ul.pnotes {
+    width: var(--list-item-width); /*558; /*hack for mlabs page*/
+    text-align: justify;
+    color: var(--primary-text-color);
+}
+
+/* Footer date styling */
+.footer-date {
+    margin-top: 30pt;
+}
+
+.footer-date::before {
+    content: '';
+    display: block;
+    border-top: 1px solid currentColor;  /* Creates the horizontal line */
+    margin-bottom: 2pt;  /* Space between line and text */
+}
+
+.footer-date {
+    text-align: right;
+    font-family: helvetica, sans-serif;
+    color: #a0a0a0;
+    font-size: 7.5pt;
+}
+
 hr.footdate {
     margin-top: 30pt
 }
@@ -459,12 +484,6 @@ p.footdate {
     font-family: helvetica, sans-serif;
     color: #a0a0a0;
     font-size: 7.5pt
-}
-
-ul.pnotes {
-    width: var(--list-item-width); /*558; /*hack for mlabs page*/
-    text-align: justify;
-    color: var(--primary-text-color);
 }
 
 /*** homepage ***/
