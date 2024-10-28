@@ -27,8 +27,14 @@
     --main-font-stack:
         'Jost', Futura, 'Futura PT', 'Futura Std', 'Gothic', 'Gill Sans', 'Avant Garde',
         system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --main-font-size: 10pt;
+    --emph-font-size: 12pt;
+    --footer-font-size: 7.5pt;
+    --name-header-font-size: 42pt;
+    --external-link-font-size: 11pt;
+    --hidden-font-size: 1pt; /* make it 0pt? */
     --main-width: 650;
-    --list-item-width: 610; /* main-width - 40 */
+    --list-item-width: calc(var(--main-width) - 40);
     --contact-width: 420;
 }
 
@@ -46,7 +52,7 @@ body {
 }
 
 div.author {
-    font-size: 10pt;
+    font-size: var(--main-font-size);
 }
 
 .primary {
@@ -59,7 +65,7 @@ div.author {
 
 .pubentry {
     width: var(--main-width);
-    font-size: 10pt;
+    font-size: var(--main-font-size);
     font-weight: bold;
     text-align: justify;
     color: var(--primary-text-color);
@@ -71,7 +77,7 @@ div.author {
 
 .job {
     width: var(--main-width);
-    font-size: 10pt;
+    font-size: var(--main-font-size);
     font-weight: bold;
     text-align: justify;
     color: var(--primary-text-color);
@@ -83,7 +89,7 @@ div.author {
 
 .school {
     width: var(--main-width);
-    font-size: 10pt;
+    font-size: var(--main-font-size);
     font-weight: bold;
     text-align: justify;
     color: var(--primary-text-color);
@@ -93,7 +99,7 @@ div.author {
 
 .honentry {
     width: 650;
-    font-size: 10pt;
+    font-size: var(--main-font-size);
     font-weight: bold;
     color: var(--primary-text-color);
     padding-top: 15pt;
@@ -104,7 +110,7 @@ div.author {
 
 .honentrylast {
     width: 650;
-    font-size: 10pt;
+    font-size: var(--main-font-size);
     font-weight: bold;
     color: var(--primary-text-color);
     padding-top: 15pt;
@@ -117,13 +123,13 @@ div.author {
 div.lyft {
     color: #ff00bf; /*lyft-pink*/
     font-weight: bold;
-    font-size: 12pt;
+    font-size: var(--emph-font-size);
 }
 
 div.article {
     color: var(--emph-color);
     font-weight: bold;
-    font-size: 12pt;
+    font-size: var(--emph-font-size);
     text-align: left;
 }
 
@@ -147,12 +153,12 @@ a.article:active {
 div.plinks {
     color: var(--emph-color);
     font-weight: normal;
-    font-size: 10pt;
+    font-size: var(--main-font-size);
 }
 
 a.hidden {
     color: #000000;
-    font-size: 1pt; /*make it 0pt?*/
+    font-size: var(--hidden-font-size);
     text-decoration: none;
 }
 
@@ -190,7 +196,7 @@ p.pnotes {
 
 .emph {
     color: var(--emph-color);
-    font-size: 12pt;
+    font-size: var(--emph-font-size);
     font-weight: bold;
 }
 
@@ -215,7 +221,7 @@ ul.pnotes {
 .footer-date {
     text-align: right;
     color: #a0a0a0;
-    font-size: 7.5pt;
+    font-size: var(--footer-font-size);
 }
 
 hr.footdate {
@@ -225,7 +231,7 @@ hr.footdate {
 p.footdate {
     text-align: right;
     color: #a0a0a0;
-    font-size: 7.5pt
+    font-size: var(--footer-font-size);
 }
 
 /*-------------------- menu --------------------*/
@@ -265,7 +271,7 @@ p.footdate {
     padding-bottom: 10px;
     color: var(--emph-color);
     font-weight: bold;
-    font-size: 10pt;
+    font-size: var(--main-font-size);
     text-decoration: none;
 }
 
@@ -479,7 +485,7 @@ a.lyft:active {
 
 /* Name styling */
 .name-header {
-    font-size: 42pt;
+    font-size: var(--name-header-font-size);
     font-weight: normal;
     color: #aaa9ad;
     margin: 0;
@@ -497,7 +503,7 @@ a.lyft:active {
 .title-list li {
     display: inline;
     color: var(--emph-color);
-    font-size: 12pt;
+    font-size: var(--emph-font-size);
     font-weight: bold;
 }
 
@@ -510,7 +516,7 @@ a.lyft:active {
 .location {
     margin-top: 0.5rem;
     color: var(--primary-text-color);
-    font-size: 10pt;
+    font-size: var(--main-font-size);
     font-weight: bold;
 }
 
@@ -543,7 +549,7 @@ a.lyft:active {
 
 .contact {
     width: var(--contact-width);
-    font-size: 10pt;
+    font-size: var(--main-font-size);
     font-weight: medium;
     text-align: justify;
     color: var(--primary-text-color);
@@ -573,7 +579,7 @@ a.lyft:active {
 .external-links-section {
     width: 100%;
     margin-top: 2rem;
-    font-size: 11pt;
+    font-size: var(--external-link-font-size);
 }
 
 .external-links-section h2 {
