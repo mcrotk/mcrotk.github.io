@@ -224,16 +224,6 @@ ul.pnotes {
     font-size: var(--footer-font-size);
 }
 
-hr.footdate {
-    margin-top: 30pt
-}
-
-p.footdate {
-    text-align: right;
-    color: #a0a0a0;
-    font-size: var(--footer-font-size);
-}
-
 /*-------------------- menu --------------------*/
 .content-wrapper {
     display: flex;
