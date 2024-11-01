@@ -250,6 +250,9 @@ ul.pnotes {
 }
 
 .menu-container {
+    position: fixed; /* Make container fixed */
+    top: 0; /* Align to top of viewport */
+    left: 10;
     flex: 0 0 200px;
     max-width: 200px; /* Should match the flex-basis above */
     padding-top: 0px;
@@ -261,9 +264,9 @@ ul.pnotes {
 
 .content-container {
     flex: 1;
-    padding-left: 30px;
     padding-top: 10px;
     padding-right: 5px;
+    padding-left: 230px; /* Increased to account for fixed menu width */
 }
 
 .menu {
@@ -290,6 +293,7 @@ ul.pnotes {
     }
     
     .menu-container {
+        position: static; /* Reset fixed positioning on mobile */
         flex-basis: auto;
         max-width: 100%;
         width: auto;
