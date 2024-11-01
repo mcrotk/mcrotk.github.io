@@ -62,14 +62,14 @@ div.author {
     color: var(--secondary-text-color);
 }
 
-h2.first-subsection {
+.first-subsection {
     margin-top: 15pt;
     margin-bottom: 15pt;
     color: white;
     font-weight: bold;
 }
 
-h2.subsection {
+.subsection {
     margin-top: 40pt;
     margin-bottom: 15pt;
     color: white;
