@@ -95,8 +95,8 @@ h2.subsection {
     color: var(--primary-text-color);
     padding-top: 15pt;
     padding-bottom: 15pt;
-    border-style: solid none none none;
-    border-width: thin;
+    /* border-style: solid none none none; */
+    /* border-width: thin; */
 }
 
 .school {
