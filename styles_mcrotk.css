@@ -512,6 +512,7 @@ a.lyft:active {
     color: var(--emph-color);
     font-size: var(--emph-font-size);
     font-weight: bold;
+    white-space: nowrap; /* Prevents wrapping within role text */
 }
 
 .title-list li:not(:last-child)::after {
