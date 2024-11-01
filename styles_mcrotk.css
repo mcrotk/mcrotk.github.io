@@ -63,6 +63,20 @@ div.author {
     color: var(--secondary-text-color);
 }
 
+h2.first-subsection {
+    margin-top: 15pt;
+    margin-bottom: 15pt;
+    color: white;
+    font-weight: bold;
+}
+
+h2.subsection {
+    margin-top: 40pt;
+    margin-bottom: 15pt;
+    color: white;
+    font-weight: bold;
+}
+
 .pubentry {
     width: var(--main-width);
     font-size: var(--main-font-size);
@@ -104,20 +118,6 @@ div.author {
     color: var(--primary-text-color);
     padding-top: 15pt;
     padding-bottom: 15pt;
-    border-style: solid none none none;
-    border-width: thin;
-}
-
-.honentrylast {
-    width: 650;
-    font-size: var(--main-font-size);
-    font-weight: bold;
-    color: var(--primary-text-color);
-    padding-top: 15pt;
-    padding-bottom: 15pt;
-    margin-bottom: 40pt;
-    border-style: solid none solid none;
-    border-width: thin;
 }
 
 div.lyft {
@@ -526,6 +526,23 @@ a.lyft:active {
 /* Section styling */
 .section-content {
     margin-left: 40px;  /* instead of blockquote indentation */
+}
+
+/* separated list */
+.separated-list {
+    --separated-list-border-type: thin solid;
+}
+
+.separated-list .list-entry:not(:first-child) {
+    border-top: var(--separated-list-border-type);
+}
+
+.separated-list .list-entry:first-child {
+    border-top: var(--separated-list-border-type);
+}
+
+.separated-list .list-entry:last-child {
+    border-bottom: var(--separated-list-border-type);
 }
 
 /* Contact section styling */
