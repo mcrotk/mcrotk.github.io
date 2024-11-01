@@ -34,6 +34,7 @@
     --external-link-font-size: 11pt;
     --hidden-font-size: 1pt; /* make it 0pt? */
     --main-width: 650;
+    --menu-width: 200px;
     --list-item-width: calc(var(--main-width) - 40);
 }
 
@@ -253,20 +254,20 @@ ul.pnotes {
     position: fixed; /* Make container fixed */
     top: 0; /* Align to top of viewport */
     left: 10;
-    flex: 0 0 200px;
-    max-width: 200px; /* Should match the flex-basis above */
+    flex: 0 0 var(--menu-width);
+    max-width: var(--menu-width);
     padding-top: 0px;
     padding-right: 5px;
     background-color: #141414; /* dark grey */
-    border-right: 1px solid;
     height: 100vh; /* full viewport height */
+    border-right: 1px solid;
 }
 
 .content-container {
     flex: 1;
     padding-top: 10px;
     padding-right: 5px;
-    padding-left: 230px; /* Increased to account for fixed menu width */
+    padding-left: calc(var(--menu-width) + 30px);
 }
 
 .menu {
