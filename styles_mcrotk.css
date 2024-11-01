@@ -201,6 +201,28 @@ ul.pnotes {
     color: var(--primary-text-color);
 }
 
+/* Section styling */
+.section-content {
+    margin-left: 40px;  /* instead of blockquote indentation */
+}
+
+/* separated list */
+.separated-list {
+    --separated-list-border-type: thin solid;
+}
+
+.separated-list .list-entry:not(:first-child) {
+    border-top: var(--separated-list-border-type);
+}
+
+.separated-list .list-entry:first-child {
+    border-top: var(--separated-list-border-type);
+}
+
+.separated-list .list-entry:last-child {
+    border-bottom: var(--separated-list-border-type);
+}
+
 /* Footer date styling */
 .footer-date {
     margin-top: 30pt;
@@ -516,28 +538,6 @@ a.lyft:active {
     height: 234px;
     max-width: 100%;  /* Keeps the image responsive */
     display: block;
-}
-
-/* Section styling */
-.section-content {
-    margin-left: 40px;  /* instead of blockquote indentation */
-}
-
-/* separated list */
-.separated-list {
-    --separated-list-border-type: thin solid;
-}
-
-.separated-list .list-entry:not(:first-child) {
-    border-top: var(--separated-list-border-type);
-}
-
-.separated-list .list-entry:first-child {
-    border-top: var(--separated-list-border-type);
-}
-
-.separated-list .list-entry:last-child {
-    border-bottom: var(--separated-list-border-type);
 }
 
 /* Contact section styling */
