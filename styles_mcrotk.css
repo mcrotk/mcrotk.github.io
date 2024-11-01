@@ -35,7 +35,6 @@
     --hidden-font-size: 1pt; /* make it 0pt? */
     --main-width: 650;
     --list-item-width: calc(var(--main-width) - 40);
-    --contact-width: 420;
 }
 
 body {
@@ -95,8 +94,6 @@ h2.subsection {
     color: var(--primary-text-color);
     padding-top: 15pt;
     padding-bottom: 15pt;
-    /* border-style: solid none none none; */
-    /* border-width: thin; */
 }
 
 .school {
@@ -553,31 +550,12 @@ a.lyft:active {
 }
 
 .contact {
-    width: var(--contact-width);
     font-size: var(--main-font-size);
     font-weight: medium;
     text-align: justify;
     color: var(--primary-text-color);
     padding-top: 15pt;
     padding-bottom: 15pt;
-}
-
-/* contact list */
-.contact-list {
-    width: var(--contact-width);
-    --contact-list-border-type: thin solid;
-}
-
-.contact-list .contact:first-child {
-    border-top: var(--contact-list-border-type);
-}
-
-.contact-list .contact:last-child {
-    border-bottom: var(--contact-list-border-type);
-}
-
-.contact-list .contact:not(:first-child) {
-    border-top: var(--contact-list-border-type);
 }
 
 /* External links section */
