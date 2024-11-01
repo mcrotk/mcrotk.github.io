@@ -41,6 +41,7 @@ body {
     background-color: #000000; /* black */
     margin-left: 20pt;
     margin-top: 15pt;
+    padding-right: 2rem;
     color: #ffffff; /* white */
     height: 100%;
     font-family: var(--main-font-stack);
