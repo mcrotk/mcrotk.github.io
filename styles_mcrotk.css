@@ -356,6 +356,11 @@ ul.pnotes {
     .menu a:last-child::after {
         right: calc(-1*var(--menu-link-spacing));
     }
+
+    /* remove section indentation on small screens */
+    .section-content {
+        margin-left: 0;
+    }
 }
 
 /*-------------------- links --------------------*/
