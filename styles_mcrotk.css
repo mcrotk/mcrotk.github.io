@@ -118,12 +118,6 @@ div.author {
     padding-bottom: 15pt;
 }
 
-div.lyft {
-    color: #ff00bf; /*lyft-pink*/
-    font-weight: bold;
-    font-size: var(--emph-font-size);
-}
-
 div.article {
     color: var(--emph-color);
     font-weight: bold;
@@ -152,12 +146,6 @@ div.plinks {
     color: var(--emph-color);
     font-weight: normal;
     font-size: var(--main-font-size);
-}
-
-a.hidden {
-    color: #000000;
-    font-size: var(--hidden-font-size);
-    text-decoration: none;
 }
 
 h3.abstract {
@@ -244,126 +232,6 @@ ul.pnotes {
     font-size: var(--footer-font-size);
 }
 
-/*-------------------- menu --------------------*/
-.content-wrapper {
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-}
-
-.menu-container {
-    position: fixed; /* Make container fixed */
-    top: 0; /* Align to top of viewport */
-    left: 10;
-    flex: 0 0 var(--menu-width);
-    max-width: var(--menu-width);
-    padding-top: 0px;
-    padding-right: 5px;
-    background-color: #141414; /* dark grey */
-    height: 100vh; /* full viewport height */
-    border-right: 1px solid;
-    z-index: 1000; /* Ensure menu stays above other content */
-}
-
-.content-container {
-    flex: 1;
-    padding-top: 10px;
-    padding-right: 5px;
-    padding-left: calc(var(--menu-width) + 30px);
-}
-
-.menu {
-    position: sticky;
-    top: 0;
-    padding: 100px 5px 20px 20px; /* top, right, bottom, left */
-}
-
-.menu a {
-    display: block;
-    margin-bottom: 20px;
-    margin-right: 10px;
-    padding-bottom: 10px;
-    color: var(--emph-color);
-    font-weight: bold;
-    font-size: var(--main-font-size);
-    text-decoration: none;
-}
-
-/*-------------------- Mobile Styles --------------------*/
-@media (max-width: 768px) { /* breakpoint for top menu */
-    .content-wrapper {
-        flex-direction: column;
-    }
-    
-    .menu-container {
-        position: fixed; /* Keep fixed positioning */
-        flex-basis: auto;
-        max-width: 100%;
-        width: 100%; /* Full width */
-        width: auto;
-        height: auto;
-        border-right: none; /* Remove right border on mobile */
-        border-bottom: 1px solid; /* Add a bottom border for separation */
-        background-color: #141414; /* Ensure background is visible */
-    }
-    
-    .content-container {
-        padding-left: 0;
-        margin-top: 60px; /* Add space for fixed menu */
-    }
-    
-    .menu {
-        position: relative;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start; /* Aligns items to the left */
-        align-items: center; /* Vertically centers items */
-        padding: var(--menu-link-spacing) calc(2*var(--menu-link-spacing));
-        --menu-separator-color: var(--emph-color);
-        --menu-link-spacing: 5px;
-    }
-
-    .menu a {
-        margin: calc(var(--menu-link-spacing)/2) var(--menu-link-spacing);
-        padding: 0 var(--menu-link-spacing); /* Padding for the separators */
-        white-space: nowrap; /* Prevents wrapping within link text */
-        position: relative; /* For positioning the separator */
-    }
-
-    /* Add separators between menu items */
-    .menu a:not(:first-child)::before {
-        content: "|";
-        position: absolute;
-        left: calc(-1*var(--menu-link-spacing)); /* Adjust based on the margin */
-        top: 50%;
-        transform: translateY(-50%);
-        color: var(--menu-separator-color);
-    }
-
-    /* Add outer separators */
-    .menu a:first-child::before,
-    .menu a:last-child::after {
-        content: "|";
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        color: var(--menu-separator-color);
-    }
-    
-    .menu a:first-child::before {
-        left: calc(-1*var(--menu-link-spacing));
-    }
-
-    .menu a:last-child::after {
-        right: calc(-1*var(--menu-link-spacing));
-    }
-
-    /* remove section indentation on small screens */
-    .section-content {
-        margin-left: 0;
-    }
-}
-
 /*-------------------- links --------------------*/
 a:link {
     color: var(--main-link-color); 
@@ -382,6 +250,13 @@ a:active {
     text-decoration: var(--link-hover-decoration);
 }
 
+a.hidden {
+    color: #000000;
+    font-size: var(--hidden-font-size);
+    text-decoration: none;
+}
+
+/*--- Lyft ---*/
 a.lyft:link {
     color: #ff00bf; /* lyft-pink */
     text-decoration: var(--link-decoration);
@@ -397,6 +272,12 @@ a.lyft:hover {
 a.lyft:active {
     color: #869eb5; /* bluish */
     text-decoration: var(--link-hover-decoration);
+}
+
+div.lyft {
+    color: #ff00bf; /*lyft-pink*/
+    font-weight: bold;
+    font-size: var(--emph-font-size);
 }
 
 /*-------------------- link series --------------------*/
@@ -584,4 +465,124 @@ a.lyft:active {
 
 .external-links-section h2 {
     margin-bottom: 1rem;
+}
+
+/*-------------------- menu --------------------*/
+.content-wrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+}
+
+.menu-container {
+    position: fixed; /* Make container fixed */
+    top: 0; /* Align to top of viewport */
+    left: 10;
+    flex: 0 0 var(--menu-width);
+    max-width: var(--menu-width);
+    padding-top: 0px;
+    padding-right: 5px;
+    background-color: #141414; /* dark grey */
+    height: 100vh; /* full viewport height */
+    border-right: 1px solid;
+    z-index: 1000; /* Ensure menu stays above other content */
+}
+
+.content-container {
+    flex: 1;
+    padding-top: 10px;
+    padding-right: 5px;
+    padding-left: calc(var(--menu-width) + 30px);
+}
+
+.menu {
+    position: sticky;
+    top: 0;
+    padding: 100px 5px 20px 20px; /* top, right, bottom, left */
+}
+
+.menu a {
+    display: block;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    padding-bottom: 10px;
+    color: var(--emph-color);
+    font-weight: bold;
+    font-size: var(--main-font-size);
+    text-decoration: none;
+}
+
+/*---------------Small Screen / Mobile Styles --------------------*/
+@media (max-width: 768px) { /* breakpoint for top menu */
+    .content-wrapper {
+        flex-direction: column;
+    }
+    
+    .menu-container {
+        position: fixed; /* Keep fixed positioning */
+        flex-basis: auto;
+        max-width: 100%;
+        width: 100%; /* Full width */
+        width: auto;
+        height: auto;
+        border-right: none; /* Remove right border on mobile */
+        border-bottom: 1px solid; /* Add a bottom border for separation */
+        background-color: #141414; /* Ensure background is visible */
+    }
+    
+    .content-container {
+        padding-left: 0;
+        margin-top: 60px; /* Add space for fixed menu */
+    }
+    
+    .menu {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start; /* Aligns items to the left */
+        align-items: center; /* Vertically centers items */
+        padding: var(--menu-link-spacing) calc(2*var(--menu-link-spacing));
+        --menu-separator-color: var(--emph-color);
+        --menu-link-spacing: 5px;
+    }
+
+    .menu a {
+        margin: calc(var(--menu-link-spacing)/2) var(--menu-link-spacing);
+        padding: 0 var(--menu-link-spacing); /* Padding for the separators */
+        white-space: nowrap; /* Prevents wrapping within link text */
+        position: relative; /* For positioning the separator */
+    }
+
+    /* Add separators between menu items */
+    .menu a:not(:first-child)::before {
+        content: "|";
+        position: absolute;
+        left: calc(-1*var(--menu-link-spacing)); /* Adjust based on the margin */
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--menu-separator-color);
+    }
+
+    /* Add outer separators */
+    .menu a:first-child::before,
+    .menu a:last-child::after {
+        content: "|";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--menu-separator-color);
+    }
+    
+    .menu a:first-child::before {
+        left: calc(-1*var(--menu-link-spacing));
+    }
+
+    .menu a:last-child::after {
+        right: calc(-1*var(--menu-link-spacing));
+    }
+
+    /* remove section indentation on small screens */
+    .section-content {
+        margin-left: 0;
+    }
 }
