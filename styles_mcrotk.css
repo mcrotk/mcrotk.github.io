@@ -79,6 +79,16 @@ div.author {
     font-weight: bold;
 }
 
+.list-entry {
+    width: var(--main-width);
+    font-size: var(--main-font-size);
+    font-weight: bold;
+    text-align: justify;
+    color: var(--primary-text-color);
+    padding-top: 15pt;
+    padding-bottom: 15pt;
+}
+
 .pubentry {
     width: var(--main-width);
     font-size: var(--main-font-size);
