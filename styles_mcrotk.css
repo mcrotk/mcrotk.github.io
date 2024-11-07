@@ -458,12 +458,7 @@ div.lyft {
 }
 
 .contact {
-    font-size: var(--main-font-size);
     font-weight: 400; /* medium */
-    text-align: justify;
-    color: var(--primary-text-color);
-    padding-top: 15pt;
-    padding-bottom: 15pt;
 }
 
 /* External links section */
