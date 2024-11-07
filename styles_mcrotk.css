@@ -82,7 +82,7 @@ div.author {
 .list-entry {
     width: var(--main-width);
     font-size: var(--main-font-size);
-    font-weight: bold;
+    font-weight: 700; /* bold */
     text-align: justify;
     color: var(--primary-text-color);
     padding-top: 15pt;
@@ -459,7 +459,7 @@ div.lyft {
 
 .contact {
     font-size: var(--main-font-size);
-    font-weight: medium;
+    font-weight: 400; /* medium */
     text-align: justify;
     color: var(--primary-text-color);
     padding-top: 15pt;
