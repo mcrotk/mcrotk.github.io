@@ -207,14 +207,14 @@ ul.pnotes {
 .footer-date::before {
     content: '';
     display: block;
-    /* border-top: 1px solid currentColor;  /\* Creates the horizontal line *\/ */
+    border-top: 1px solid currentColor;  /* Creates the horizontal line *\/ */
     margin-bottom: 2pt;  /* Space between line and text */
 }
 
 .footer-date {
     text-align: right;
     color: #a0a0a0;
-    font-size: 0 /* var(--footer-font-size); */
+    font-size: var(--footer-font-size);
 }
 
 /*-------------------- links --------------------*/
