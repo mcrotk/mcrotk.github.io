@@ -207,7 +207,7 @@ ul.pnotes {
 .footer-date::before {
     content: '';
     display: block;
-    border-top: 1px solid currentColor;  /* Creates the horizontal line *\/ */
+    border-top: 1px solid currentColor;  /* Creates the horizontal line */
     margin-bottom: 2pt;  /* Space between line and text */
 }
 
